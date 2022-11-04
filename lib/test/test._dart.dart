@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:androidflutterfirst/test_mongo_database.dart' as mongo;
-import 'package:androidflutterfirst/test_model.dart' as testModel;
-import 'package:androidflutterfirst/contact_model.dart' as contactModel;
+import 'package:androidflutterfirst/test/test_mongo_database.dart' as mongo;
+import 'package:androidflutterfirst/test/test_model.dart' as testModel;
+import 'package:androidflutterfirst/contact/contact_model.dart' as contactModel;
 import 'package:androidflutterfirst/app_model.dart' as model;
 import 'package:androidflutterfirst/app_util.dart' as util;
 

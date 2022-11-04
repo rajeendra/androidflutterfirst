@@ -4,7 +4,7 @@ import 'package:mongo_dart/mongo_dart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:androidflutterfirst/app_util.dart' as util;
 import 'package:androidflutterfirst/app_model.dart' as model;
-import 'package:androidflutterfirst/contact_model.dart' as dm;
+import 'package:androidflutterfirst/contact/contact_model.dart' as dm;
 
 var user = '<user>';
 var password = '<password>';

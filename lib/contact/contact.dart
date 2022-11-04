@@ -11,8 +11,8 @@ import 'package:androidflutterfirst/app_util.dart' as appUtil;
 import 'package:androidflutterfirst/app_model.dart' as appModel;
 import 'package:androidflutterfirst/app_constants.dart' as constants;
 // App contact
-import 'package:androidflutterfirst/contact_service.dart' as contact;
-import 'package:androidflutterfirst/contact_model.dart' as model;
+import 'package:androidflutterfirst/contact/contact_service.dart' as contact;
+import 'package:androidflutterfirst/contact/contact_model.dart' as model;
 
 class Contact extends StatefulWidget {
   Contact({

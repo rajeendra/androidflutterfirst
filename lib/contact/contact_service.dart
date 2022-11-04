@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:androidflutterfirst/app_constants.dart' as constants;
 import 'package:androidflutterfirst/app_util.dart' as appUtil;
 import 'package:androidflutterfirst/app_model.dart' as appModel;
-import 'package:androidflutterfirst/contact_model.dart' as model;
+import 'package:androidflutterfirst/contact/contact_model.dart' as model;
 
 var user = '<user>';
 var password = '<password>';

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:androidflutterfirst/album_model.dart' as model;
+import 'package:androidflutterfirst/album/album_model.dart' as model;
 
 Future<List<model.Album>> fetchAlbum() async {
   List<model.Album>? result;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:androidflutterfirst/app_constants.dart' as constants;
 import 'package:androidflutterfirst/app_util.dart' as util;
 // Person
-import 'package:androidflutterfirst/person_model.dart' as modelPerson;
+import 'package:androidflutterfirst/person/person_model.dart' as modelPerson;
 
 
 // Person Detail Screen

@@ -5,7 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
-import 'package:androidflutterfirst/contact_model.dart' as model;
+import 'package:androidflutterfirst/contact/contact_model.dart' as model;
 
 // App
 import 'package:androidflutterfirst/app_util.dart' as util;

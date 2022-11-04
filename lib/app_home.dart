@@ -6,12 +6,12 @@ import 'package:camera/camera.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // Google APIs
-import 'package:androidflutterfirst/api_google_sign_in.dart' as googleAPI;
-import 'package:androidflutterfirst/api_google_people.dart' as googleAPI;
-import 'package:androidflutterfirst/api_google_drive.dart' as googleAPI;
-import 'package:androidflutterfirst/api_google_map.dart' as googleAPI;
+import 'package:androidflutterfirst/google/api_google_sign_in.dart' as googleAPI;
+import 'package:androidflutterfirst/google/api_google_people.dart' as googleAPI;
+import 'package:androidflutterfirst/google/api_google_drive.dart' as googleAPI;
+import 'package:androidflutterfirst/google/api_google_map.dart' as googleAPI;
 // PayPal
-import 'package:androidflutterfirst/api_paypal_braintree.dart' as paypalAPI;
+import 'package:androidflutterfirst/paypal/api_paypal_braintree.dart' as paypalAPI;
 // main
 import 'package:androidflutterfirst/main.dart' as main;
 // Device peripherals
@@ -21,17 +21,17 @@ import 'package:androidflutterfirst/app_widget_icon_favorite.dart' as cw;
 import 'package:androidflutterfirst/app_widget_button.dart' as cw;
 import 'package:androidflutterfirst/app_widget_container_broadcaster_subscriber.dart' as cw;
 // Test
-import 'package:androidflutterfirst/test._dart.dart' as test;
+import 'package:androidflutterfirst/test/test._dart.dart' as test;
 // App
 import 'package:androidflutterfirst/app_util.dart' as util;
 import 'package:androidflutterfirst/app_model.dart' as model;
 import 'package:androidflutterfirst/app_constants.dart' as constants;
 // App person
-import 'package:androidflutterfirst/person.dart' as person;
+import 'package:androidflutterfirst/person/person.dart' as person;
 // App contact
-import 'package:androidflutterfirst/contact.dart' as contact;
+import 'package:androidflutterfirst/contact/contact.dart' as contact;
 // App album
-import 'package:androidflutterfirst/album.dart' as album;
+import 'package:androidflutterfirst/album/album.dart' as album;
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required this.title}) : super(key: key);
