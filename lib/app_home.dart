@@ -17,6 +17,7 @@ import 'package:androidflutterfirst/main.dart' as main;
 // Device peripherals
 import 'package:androidflutterfirst/camera_image_picker.dart' as cam;
 // Custom widgets
+import 'package:androidflutterfirst/app_widget.dart' as cw;
 import 'package:androidflutterfirst/app_widget_icon_favorite.dart' as cw;
 import 'package:androidflutterfirst/app_widget_button.dart' as cw;
 import 'package:androidflutterfirst/app_widget_container_broadcaster_subscriber.dart' as cw;
@@ -1225,6 +1226,7 @@ class _HomePageState extends State<HomePage>{
             util.showSuccessSnackBar(context, 'ExElevatedButton pressed');
           },
         ),
+        cw.PlusMinusButton(),
         Expanded(
           child: Container(
             color: Colors.white,
