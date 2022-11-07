@@ -4,10 +4,10 @@ class PlusMinusButton extends StatefulWidget {
   const PlusMinusButton({Key? key,}) : super(key: key);
 
   @override
-  State<PlusMinusButton> createState() => _PlusMinusButtosState();
+  State<PlusMinusButton> createState() => _PlusMinusButtonState();
 }
 
-class _PlusMinusButtosState extends State<PlusMinusButton> {
+class _PlusMinusButtonState extends State<PlusMinusButton> {
 
   int qty=0;
 
