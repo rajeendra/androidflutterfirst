@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 // Google APIs
 import 'package:androidflutterfirst/google/api_google_sign_in.dart' as googleAPI;
@@ -23,6 +24,7 @@ import 'package:androidflutterfirst/app_widget_button.dart' as cw;
 import 'package:androidflutterfirst/app_widget_container_broadcaster_subscriber.dart' as cw;
 // Test
 import 'package:androidflutterfirst/test/test._dart.dart' as test;
+import 'package:androidflutterfirst/test/test_data.dart' as data;
 // App
 import 'package:androidflutterfirst/app_util.dart' as util;
 import 'package:androidflutterfirst/app_model.dart' as model;
@@ -433,6 +435,19 @@ class _HomePageState extends State<HomePage>{
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
+            title: const Text('Card with a carousel slider',
+              style: TextStyle(fontSize: 15),
+            ),
+            onTap: () {
+              setState(() {
+                selectedState = constants.STATE_CARD_CAROUSEL;
+              });
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            dense: true,
+            visualDensity: VisualDensity(vertical: -4),
             title: const Text('Number incrementer | ..',
               style: TextStyle(fontSize: 15),
             ),
@@ -535,7 +550,9 @@ class _HomePageState extends State<HomePage>{
     else if (selectedState == constants.STATE_PAYPAL_API_BRAINTREE) {
       return paypalAPI.APIPayPalBraintree();
     }
-
+    else if (selectedState == constants.STATE_CARD_CAROUSEL) {
+      return _buildCard();
+    }
     else if (selectedState == constants.STATE_ERROR_UNEXPECTED) {
       return _app_Oops();
     }
@@ -1519,10 +1536,36 @@ Widget _buildStack() {
 // 6. Card
 Widget _buildCard() {
   return SizedBox(
-    height: 210,
+    //height: 210,
     child: Card(
+      margin: EdgeInsets.symmetric(
+          horizontal: 10,
+          //vertical: 10
+      ),
       child: Column(
         children: [
+          SizedBox(
+            child: _buildCarouselSlider(),
+
+            // Image - given width, height
+            // width: 335,
+            // height: 110,
+            // child: Image.asset(
+            //   'assets/images/kiwi.png',
+            // ),
+
+            // Image assets - BoxFit.fill
+            // child: Image.asset(
+            //   'assets/images/kiwi.png',
+            //   fit: BoxFit.fill,
+            // ),
+
+            // Image internet - BoxFit.fill
+            // child: Image.network(
+            //   'https://via.placeholder.com/300?text=DITTO',
+            //   fit: BoxFit.fill,
+            // ),
+          ),
           ListTile(
             title: const Text(
               '1625 Main Street',
@@ -1555,5 +1598,57 @@ Widget _buildCard() {
         ],
       ),
     ),
+  );
+}
+
+Widget _buildCarouselSlider(){
+
+  return CarouselSlider(
+    //options: CarouselOptions(height: 200.0),
+    options: CarouselOptions(
+      height: 200.0,
+      autoPlay: false,
+      enlargeCenterPage: true,
+      viewportFraction: 0.9,
+      aspectRatio: 2.0,
+      initialPage: 2,
+    ),
+
+    // Basic asset image carousel demo
+    //
+    // items: data.astImgList
+    //     .map((item) => Container(
+    //   child: Center(
+    //       child: Image.asset(item, fit: BoxFit.cover, width: 1000)),
+    // ))
+    //     .toList(),
+
+    // Basic internet image carousel
+    //
+    items: data.netImgList
+        .map((item) => Container(
+              child: Center(
+                  child:
+                      Image.network(item, fit: BoxFit.cover, width: 1000)),
+            ))
+        .toList(),
+
+    // Basic text carousel
+    //
+    // items: [1,2,3,4,5].map((i) {
+    //   return Builder(
+    //     builder: (BuildContext context) {
+    //       return Container(
+    //           width: MediaQuery.of(context).size.width,
+    //           margin: EdgeInsets.symmetric(horizontal: 5.0),
+    //           decoration: BoxDecoration(
+    //               color: Colors.amber
+    //           ),
+    //           child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+    //       );
+    //     },
+    //   );
+    // }).toList(),
+
   );
 }
