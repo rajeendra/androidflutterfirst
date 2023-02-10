@@ -22,9 +22,9 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
               padding: const EdgeInsets.all(0),
               alignment: Alignment.centerRight,
               icon: (_isFavorited
-                  ? const Icon(Icons.star)
-                  : const Icon(Icons.star_border)),
-              color: Colors.red[500],
+                  ? const Icon(Icons.thumb_up)
+                  : const Icon(Icons.thumb_up_outlined)),
+              color: Colors.blue,
               onPressed: _toggleFavorite,
             ),
           ),

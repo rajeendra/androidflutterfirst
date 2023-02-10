@@ -20,6 +20,7 @@ import 'package:androidflutterfirst/camera_image_picker.dart' as cam;
 // Custom widgets
 import 'package:androidflutterfirst/app_widget.dart' as cw;
 import 'package:androidflutterfirst/app_widget_icon_favorite.dart' as cw;
+import 'package:androidflutterfirst/app_widget_rating.dart' as cw;
 import 'package:androidflutterfirst/app_widget_button.dart' as cw;
 import 'package:androidflutterfirst/app_widget_container_broadcaster_subscriber.dart' as cw;
 // Test
@@ -28,6 +29,7 @@ import 'package:androidflutterfirst/test/test_data.dart' as data;
 // App
 import 'package:androidflutterfirst/app_util.dart' as util;
 import 'package:androidflutterfirst/app_model.dart' as model;
+import 'package:androidflutterfirst/app_data.dart' as data;
 import 'package:androidflutterfirst/app_constants.dart' as constants;
 // App person
 import 'package:androidflutterfirst/person/person.dart' as person;
@@ -1244,6 +1246,7 @@ class _HomePageState extends State<HomePage>{
           },
         ),
         cw.PlusMinusButton(),
+        cw.RatingWidget(),
         Expanded(
           child: Container(
             color: Colors.white,
@@ -1277,6 +1280,13 @@ class _HomePageState extends State<HomePage>{
   final txtUserController  = TextEditingController();
   final txtPassController = TextEditingController();
 
+  final List<String> list = <String>[
+    data.SL_KEY_DEFAULT,
+    data.dataSourceList[0]["value"],
+    data.dataSourceList[1]["value"]
+  ];
+  String dropdownValue=data.SL_KEY_DEFAULT;
+
   Future<void> _app_contact_config_show() async {
     await _app_contact_getCredentials();
     setState(() {
@@ -1292,6 +1302,12 @@ class _HomePageState extends State<HomePage>{
     }
     txtUserController.text = appContactConfiguration.user ?? '';
     txtPassController.text = appContactConfiguration.password ?? '';
+    final ddValue = data.getKeyByValue(
+        data.MAP_SL_KEY_KEY,
+        appContactConfiguration.dataSource ?? '',
+        data.MAP_SL_KEY_VAL,
+        data.dataSourceList);
+    dropdownValue = ddValue!=''?ddValue:data.SL_KEY_DEFAULT;
   }
 
   Widget _app_contact_config() {
@@ -1304,7 +1320,7 @@ class _HomePageState extends State<HomePage>{
         children: <Widget>[
           _buildHeader('Contacts | Configuration'),
           Container(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(12.0),
             color: Colors.white,
             alignment: Alignment.center,
             child:
@@ -1343,7 +1359,37 @@ class _HomePageState extends State<HomePage>{
             ),
 
           ),
-
+          Container(
+            padding: const EdgeInsets.all(12.0),
+            color: Colors.white,
+            alignment: Alignment.center,
+            child: Row( mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  const SizedBox(width: 12),
+                  DropdownButton<String>(
+                    value: dropdownValue,
+                    icon: const Icon(Icons.arrow_downward),
+                    elevation: 16,
+                    style: const TextStyle(color: Colors.deepPurple),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    onChanged: (String? value) {
+                      // This is called when the user selects an item.
+                      setState(() {
+                        dropdownValue = value!;
+                      });
+                    },
+                    items: list.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ]),
+          ),
           Container(
             padding: const EdgeInsets.all(8.0),
             color: Colors.white,
@@ -1398,8 +1444,17 @@ class _HomePageState extends State<HomePage>{
       return;
     }
 
+    final dropdownValueKey = data.getKeyByValue(
+        data.MAP_SL_KEY_VAL,
+        dropdownValue,
+        data.MAP_SL_KEY_KEY,
+        data.dataSourceList
+    );
+
     model.AppConfiguration appConfiguration = model.AppConfiguration(
-      user: txtUserController.text, password: txtPassController.text
+        user: txtUserController.text,
+        password: txtPassController.text,
+        dataSource: dropdownValueKey
     );
 
     try {

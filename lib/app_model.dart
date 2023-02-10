@@ -4,18 +4,21 @@ class AppConfiguration{
   String? user = '<user>';
   String? password = '<password>';
   String? apiKey = '<API-KEY>';
+  String? dataSource = '<DS>';
 
-  AppConfiguration({this.user,this.password, this.apiKey});
+  AppConfiguration({this.user,this.password, this.apiKey, this.dataSource});
 
   AppConfiguration.fromJson(Map<String, dynamic> jsonMap)
       : user = jsonMap['user'],
         password = jsonMap['password'],
-        apiKey = jsonMap['apiKey'];
+        apiKey = jsonMap['apiKey'],
+        dataSource = jsonMap['dataSource'];
 
   Map<String, dynamic> toJson() => {
     'user': user,
     'password': password,
     'apiKey': apiKey,
+    'dataSource': dataSource,
   };
 }
 

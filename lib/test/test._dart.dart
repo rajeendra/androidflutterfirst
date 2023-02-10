@@ -4,23 +4,25 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:androidflutterfirst/test/test_mongo_database.dart' as mongo;
 import 'package:androidflutterfirst/test/test_model.dart' as testModel;
 import 'package:androidflutterfirst/contact/contact_model.dart' as contactModel;
+import 'package:androidflutterfirst/app_data.dart' as data;
 import 'package:androidflutterfirst/app_model.dart' as model;
 import 'package:androidflutterfirst/app_util.dart' as util;
 
 void mainTest(BuildContext context) async{
-  testJSON();
+  //testJSON();
   //mongoDB(context);
   //testWriteKeyValueToStorage();
+  testCode();
 }
 
 void mongoDB(BuildContext context) async{
   await mongo.app_setCredentials();
 
   //await mongo.MongoDatabase.connect();
-  //await mongo.funcMongo_findCollection(context);
+  await mongo.funcMongo_findCollection(context);
   //await mongo.funcMongo_findDocumentByID(context);
   //await mongo.funcMongo_insertDocument(context);
-  await mongo.funcMongo_updateDocumentByID(context);
+  //await mongo.funcMongo_updateDocumentByID(context);
   //await mongo.funcMongo_deleteDocumentByID(context);
 
   print('OK');
@@ -71,6 +73,7 @@ void testJSON(){
   // json string to map
   Map<String, dynamic> userMap = jsonDecode(jsonString);
   // Take only the values you want to have in data object, in this case without address
+  // Data conversion from Map to Object data models
   var userA = testModel.User.fromJson(userMap);
 
   print('Howdy, ${userA.name}!');
@@ -96,3 +99,7 @@ void testJSON(){
 
 }
 
+void testCode(){
+  String x = data.getKeyByValue(data.MAP_SL_KEY_VAL, 'Mongodb cloud', data.MAP_SL_KEY_KEY, data.dataSourceList);
+  print(x);
+}

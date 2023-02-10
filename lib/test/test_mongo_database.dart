@@ -39,8 +39,12 @@ funcMongo_findCollection(BuildContext context) async{
   List<Map<String, dynamic>> result = await findCollection();
 
   result.forEach((element) {
-    dm.Contact contact = dm.Contact.fromJson(element);
-    contacts.add(contact);
+    try {
+      dm.Contact contact = dm.Contact.fromJson(element);
+      contacts.add(contact);
+    } catch (e) {
+      print(e);
+    }
   });
   util.showSuccessSnackBar(context, 'Success');
   return await contacts;
