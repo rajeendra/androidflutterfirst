@@ -64,7 +64,7 @@ class _ContactState extends State<Contact> {
 
     //streamSubscription = widget.shouldTriggerChange.listen((dynamic data) => someMethod(data));
     streamSubscription = widget.shouldTriggerChange.listen((dynamic data) => newContact(data));
-
+    _getAppConfig();
     _setCachedContacts();
   }
 
@@ -159,12 +159,10 @@ class _ContactState extends State<Contact> {
   ///////////////////////////////////////////////////
 
   String _contactsStorage = constants.MODULE_CONTACT_STORAGE_GOOGLE_DRIVE;
-  //String _contactsStorage = constants.MODULE_CONTACT_STORAGE_MONGO_ATLAS;
   List<model.Contact> contacts = [];
   List<model.Contact> contactsCopy = [];
   model.Contact? selectedContact;
   model.Number? selectedNumber;
-  appModel.AppConfiguration appContactConfiguration=appModel.AppConfiguration();
 
   final txtUserController  = TextEditingController();
   final txtPassController = TextEditingController();
@@ -222,6 +220,11 @@ class _ContactState extends State<Contact> {
         ),
       ],
     );
+  }
+
+  void _getAppConfig() async{
+    appModel.AppConfiguration appConfiguration = await appUtil.AppUtil.getAppConfig();
+    _contactsStorage = appConfiguration.dataSource ?? '';
   }
 
   void _setCachedContacts() async{
@@ -417,10 +420,10 @@ class _ContactState extends State<Contact> {
                 icon: const Icon(Icons.sync),
                 tooltip: 'Sync',
                 onPressed: () {
-                  if(_contactsStorage==constants.MODULE_CONTACT_STORAGE_GOOGLE_DRIVE){
-                    _googleDrive_contacts();
-                  }else{
+                  if(_contactsStorage==constants.MODULE_CONTACT_STORAGE_MONGO_ATLAS){
                     _mongoAtlas_contacts();
+                  }else{
+                    _googleDrive_contacts();
                   }
                 },
               ),
