@@ -214,9 +214,15 @@ class _HomePageState extends State<HomePage>{
           //   child: Text('Flatter learn app'),
           //
           // ),
-
+          (true==true)?
+          SizedBox(
+              width: 0,
+              height: 0,
+          )
+          :
           ListTile(
-            dense: true,
+            enabled: false,
+            dense: false,
             visualDensity: VisualDensity(vertical: -4),
             title: const Text('Layout | Grid',
               style: TextStyle(fontSize: 15),
@@ -228,6 +234,12 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -241,6 +253,12 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -254,6 +272,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+        :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -267,6 +292,12 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -280,6 +311,12 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -291,6 +328,14 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -304,6 +349,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -317,6 +369,12 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -330,6 +388,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -343,6 +408,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -356,6 +428,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -369,6 +448,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -382,6 +468,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -395,6 +488,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -408,6 +508,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -421,6 +528,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==true)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -434,6 +548,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),
@@ -447,6 +568,13 @@ class _HomePageState extends State<HomePage>{
               Navigator.pop(context);
             },
           ),
+          (true==false)?
+          SizedBox(
+            width: 0,
+            height: 0,
+          )
+          :
+
           ListTile(
             dense: true,
             visualDensity: VisualDensity(vertical: -4),

@@ -206,7 +206,7 @@ class _ContactState extends State<Contact> {
                         size: 80.0,
                         color: Colors.red
                     ),
-                    Text('Something went wrong',
+                    Text('Something went wrong..',
                       style: TextStyle(
                         //fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:androidflutterfirst/app_home.dart' as app;
 import 'package:androidflutterfirst/app_constants.dart' as constants;
 
+// Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
 bool isCameraEnabled = false;
 
 void main() async {
